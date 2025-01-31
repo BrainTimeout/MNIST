@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>lenet_traced.pt</file>
+    </qresource>
+</RCC>
