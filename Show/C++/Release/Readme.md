@@ -1,26 +1,25 @@
-# Release.zip 文件上传说明
+# Release.zip 文件
 
-由于 GitHub 对单个文件大小有 100MB 的限制，`Release.zip` 文件被分割成多个较小的部分进行上传。请按照以下步骤下载并合并这些文件，以恢复原始文件。
+由于 GitHub 对单个文件大小有 100MB 的限制，`Release.zip` 文件被分割成多个较小的部分进行上传。
 
-## 步骤 1: 下载所有分割的文件
+## 文件分割: 将`Release.zip` 分割为多个文件
 
-请确保您下载了所有分割的文件，文件名如下：
-- `Release_part_aa`
-- `Release_part_ab`
-- `Release_part_ac`
-
-## 步骤 2: 合并文件
-
-在 Windows 系统上，您可以通过以下步骤合并这些分割的文件：
-
-在这些文件的目录下使用使用 `PowerShell`运行以下命令来合并文件：
+使用了`git bash`中的`split`指令进行分割，分割为`Release_part_aa`,`Release_part_ab`,`Release_part_ac`这三个文件
 
 ```
-Copy-Item -Path "Release_part_*" -Destination "Release.zip" -Force
+split -b 50M Release.zip Release_part_
+```
+
+## 文件合并: 将具有固定前缀`Release_part_`的多个文件进行合并
+
+使用了`git bash`中的`cat`指令来合并文件：
+
+```
+cat Release_part_* > Release.zip
 ```
 
 这将把所有的分割文件合并成一个名为 `Release.zip` 的文件。
 
-## 步骤 3: 使用合并后的文件
+ ## Release文件说明
 
-一旦合并完成，您就可以像使用原始 `Release.zip` 文件一样使用恢复的文件。如果您需要提取其中的内容，可以使用适当的解压工具（如 WinRAR、7-Zip）来提取。
+`Release`文件夹中包含了一个完整的QT项目，且含有该项目运行所需要的驱动文件，可以直接运行。
