@@ -1,5 +1,5 @@
 # MNIST
-MNIST学习笔记
+CV里的HellWorld：MNIST，加上QT里的HellWorld：窗口和按钮
 
 - 最开始懒得换了，使用了VGG19作为训练模型，模型参数足足有470MB
 
