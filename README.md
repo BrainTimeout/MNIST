@@ -1,7 +1,8 @@
 # MNIST
-CV里的HellWorld：MNIST，加上QT里的HellWorld：窗口和按钮
+CV里的Helloworld：MNIST，加上QT里的HelloWorld：窗口和按钮
 
-- 最开始懒得换了，使用了VGG19作为训练模型，模型参数足足有470MB
+## 模型构建
+- 最开始懒得换了，使用了在人脸情绪识别中用到的分类模型VGG19，发现最终效果一般，且导出的模型参数足足有470MB！！
 
   ```
   # 定义VGG19模型
@@ -50,7 +51,7 @@ CV里的HellWorld：MNIST，加上QT里的HellWorld：窗口和按钮
   
   ```
 
-- 之后将模型换成LeNet-5，发现收敛效果相同的情况下模型参数为187KB，用VGG19处理MNIST，我特么真是个大聪明。。。
+- 之后将模型换成LeNet-5，发现收敛效果更好的情况下模型参数仅为187KB，用VGG19处理MNIST，简直是大炮打蚊子。
 
   ```
   # 定义 LeNet 网络
