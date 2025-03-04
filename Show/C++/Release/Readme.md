@@ -12,7 +12,7 @@ split -b 50M Release.zip Release_part_
 
 ## 文件合并: 将具有固定前缀`Release_part_`的多个文件进行合并
 
-使用了`git bash`中的`cat`指令来合并文件
+使用了`git bash`中的`cat`指令来合并文件(使用`powershell`中的`cat`指令可以合并，但合并后无法解压)
 
 ```
 cat Release_part_* > Release.zip
